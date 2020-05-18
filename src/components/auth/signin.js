@@ -4,10 +4,15 @@ import SignInForm from './signinForm'
 import {reduxForm, Field} from 'redux-form'
 
 export default class SignIn extends Component {
+
+    onSubmit= (fields) => {
+        console.log(fields)
+    }
+    
     render() {
         return (
             <div className='sign-in'>
-                <SignInForm className='sign-in__form'/>
+                <SignInForm onSubmit={this.onSubmit} className='sign-in__form'/>
             </div>
         );
     }
