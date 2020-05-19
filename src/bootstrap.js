@@ -9,7 +9,7 @@ import Layout from "./components/layout";
 import SignIn from './components/auth/signin';
 import SignUp from './components/auth/signup'
 
-const createStoreWithMiddleware = applyMiddleware()(compose((window.devToolsExtension ? window.devToolsExtension() : f => f)(createStore)));
+const createStoreWithMiddleware = applyMiddleware()(compose((window.__REDUX_DEVTOOLS_EXTENSION__ ? window.__REDUX_DEVTOOLS_EXTENSION__() : f => f)(createStore)));
 
 import "./style/main.scss";
 import history from './history';
