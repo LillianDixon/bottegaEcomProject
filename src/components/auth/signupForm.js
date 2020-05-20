@@ -10,21 +10,19 @@ class SignUpForm extends Component {
 
     render() {
         const{className, handleSubmit} = this.props
-        const links = [
+        const info = [
+
             {
                 _id: 0,
-                title: 'Not registered? Create account here',
-                onClick: () => history.push('/signup')
+                title: 'At least 6 characters',
             },
             {
                 _id : 1,
-                title: 'Forgot account email?',
-                onClick: () =>  console.log('forgot email')
+                title: 'At least one number',
             },
             {
                 _id : 2,
-                title: 'Forgot password?',
-                onClick: () =>  console.log('forgot passowrd')
+                title: 'At least one symbol',
             }
         ]
         return (
@@ -57,7 +55,7 @@ class SignUpForm extends Component {
                 />
 
                 <Field 
-                    className='sign-up-form__confirm-password' 
+                    className='sign-up-form__confirm' 
                     type='password' 
                     title='Confirm Password' 
                     placeholder='Confirm Password' 
@@ -73,16 +71,16 @@ class SignUpForm extends Component {
                 
                 <Field 
                     className='sign-up-form__login' 
-                    onClick ={() => console.log('tryna submit')}
+                    onClick ={() => history.push('/account')}
                     type='submit' 
-                    title='Login' 
+                    title='Create Account' 
                     name='login' 
                     component={FormButton}
                 />
 
                 <Field 
                     className='sign-up-form__back' 
-                    onClick ={() => console.log('tryna go back')}
+                    onClick ={() => history.push('/signin')}
                     type='button' 
                     title='Back' 
                     name='Back' 
@@ -92,8 +90,8 @@ class SignUpForm extends Component {
 
                 <Details 
                     className='sign-up-form__details' 
-                    title = 'QuickLinks' 
-                    links={links}
+                    title = 'Password Requirements' 
+                    info={info}
                 />
             </form>
         );
